@@ -1,0 +1,239 @@
+/* Variables de color para restaurante (Cálidos y elegantes) */
+:root {
+    --color-primario: #c2410c; /* Naranja rojizo fuerte */
+    --color-secundario: #9a3412; /* Naranja rojizo más oscuro */
+    --color-fondo: #fafaf9; /* Blanco hueso/cálido */
+    --color-texto: #292524; /* Gris casi negro */
+    --color-blanco: #ffffff;
+    --color-gris: #d6d3d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 1.2rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--color-primario);
+    font-size: 1.8rem;
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Toque elegante para el logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: color 0.3s;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: var(--color-primario);
+}
+
+/* Clase activa para el menú (gestionada por JS) */
+nav a.activo {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-primario);
+}
+
+/* Contenido Principal */
+main {
+    flex-grow: 1;
+    padding: 3rem 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-secundario);
+    text-align: center;
+}
+
+/* Hero Section (Inicio) */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.hero p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #57534e;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: var(--color-secundario);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Tarjetas (Proyectos / Platos) */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+}
+
+.imagen-placeholder {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+    color: var(--color-primario);
+    margin: 0.5rem 1rem;
+}
+
+.tarjeta p {
+    color: #57534e;
+    margin: 0 1rem;
+    font-size: 0.95rem;
+}
+
+/* Formulario (Contacto) */
+.formulario-contenedor {
+    background-color: var(--color-blanco);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grupo-input {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-gris);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-fondo);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.2);
+    background-color: var(--color-blanco);
+}
+
+/* Footer */
+footer {
+    background-color: #1c1917;
+    color: var(--color-gris);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+/* Diseño Móvil */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
